@@ -8,6 +8,7 @@ const TodoForms: React.FC<TodoFormsProps> = ({ onAddTodo }) => {
 
   const handleAddTodo = () => {
     if (!task.trim()) return; // Prevent adding empty tasks
+
     onAddTodo(task);
 
     setTask(""); // Clear input field after adding
@@ -32,7 +33,7 @@ const TodoForms: React.FC<TodoFormsProps> = ({ onAddTodo }) => {
         </label>
         <button
           onClick={handleAddTodo}
-          className="absolute right-7 top-7 rounded bg-slate-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="absolute right-7 top-7 rounded bg-slate-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none cursor-pointer"
           type="button"
         >
           Add

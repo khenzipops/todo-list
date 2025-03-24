@@ -46,7 +46,7 @@ const TodoList: React.FC<TodoListProps> = ({
             </div>
             <div>
               <button
-                className="bg-blue-500 text-white py-1 px-2 rounded mr-2"
+                className="bg-blue-500 text-white py-1 px-2 rounded mr-2 cursor-pointer hover:bg-blue-800"
                 onClick={() => {
                   console.log("Edit ID:", todo.id);
                   const newText = prompt("Edit your task:", todo.text);
@@ -71,7 +71,7 @@ const TodoList: React.FC<TodoListProps> = ({
                 </svg>
               </button>
               <button
-                className="bg-red-500 text-white py-1 px-2 rounded "
+                className="bg-red-500 text-white py-1 px-2 rounded cursor-pointer hover:bg-red-800"
                 onClick={() => {
                   console.log("Deleting ID:", todo.id);
                   onDeleteTodo(todo.id);

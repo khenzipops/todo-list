@@ -38,7 +38,10 @@ const App: React.FC = () => {
   return (
     <div className="grid grid-cols-[40%_60%] grid-rows-2 h-screen">
       {/* Form Section */}
-      <div className="col-span-1 row-span-2 bg-white justify-center p-4">
+      <div className="col-span-1 row-span-2 bg-white  justify-center p-4">
+        <h1 className="text-center font-Poppins text-xl font-medium">
+          Todo List
+        </h1>
         <TodoForms onAddTodo={addTodo} />{" "}
         <div className="">
           <TodoList
@@ -63,10 +66,19 @@ const App: React.FC = () => {
       </div>
 
       {/* Todo List Section */}
-      <div className="col-span-1 bg-green-500 p-4"></div>
+      <div className="col-span-1 bg-green-500 p-4">
+        {" "}
+        <h1 className="text-center font-Poppins text-xl font-medium">
+          Working Tasks
+        </h1>
+      </div>
 
       {/* Completed Tasks Section (optional for future) */}
-      <div className="col-span-1 bg-orange-600 p-4">Completed Tasks</div>
+      <div className="col-span-1 bg-orange-600 p-4">
+        <h1 className="text-center font-Poppins text-xl font-medium">
+          Completed Tasks
+        </h1>
+      </div>
     </div>
   );
 };
