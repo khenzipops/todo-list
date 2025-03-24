@@ -1,16 +1,73 @@
-import Todoforms from "./Components/TodoForms";
+import React, { useState } from "react";
+import TodoForms from "./Components/TodoContainer/todocontainer";
+import TodoList from "./Components/TodoListing/Todolist";
+import { Todo } from "./Components/types/todo.types";
 
-const App = () => {
+const App: React.FC = () => {
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const addTodo = (text: string) => {
+    const newTodo: Todo = {
+      id: crypto.randomUUID(),
+      text,
+      completed: false,
+    };
+
+    setTodos((prev) => [...prev, newTodo]);
+  };
+  const toggleTodo = (id: string) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  const editTodo = (id: string, newText: string) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
+    );
+  };
+
+  const deleteTodo = (id: string) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
   return (
-    <>
-      <div className="grid grid-cols-[40%_60%]  grid-rows-2 h-screen">
-        <div className="col-span-1 row-span-2 bg-[var(--primary)] flext items-center justify-center Poppins w-full">
-          <Todoforms />
+    <div className="grid grid-cols-[40%_60%] grid-rows-2 h-screen">
+      {/* Form Section */}
+      <div className="col-span-1 row-span-2 bg-white justify-center p-4">
+        <TodoForms onAddTodo={addTodo} />{" "}
+        <div className="">
+          <TodoList
+            todos={todos}
+            onToggleTodo={toggleTodo}
+            onEditTodo={editTodo}
+            onDeleteTodo={deleteTodo}
+          />
+          {/* <TodoList
+            todos={todos}
+            onToggleTodo={function (id: string): void {
+              throw new Error("Function not implemented.");
+            }}
+            onEditTodo={function (id: string, newText: string): void {
+              throw new Error("Function not implemented.");
+            }}
+            onDeleteTodo={function (id: string): void {
+              throw new Error("Function not implemented.");
+            }}
+          /> */}
         </div>
-        <div className="col-span-1 bg-red-500 "></div>
-        <div className="col-span-1 bg-green-500 "></div>
       </div>
-    </>
+
+      {/* Todo List Section */}
+      <div className="col-span-1 bg-green-500 p-4"></div>
+
+      {/* Completed Tasks Section (optional for future) */}
+      <div className="col-span-1 bg-orange-600 p-4">Completed Tasks</div>
+    </div>
   );
 };
 
