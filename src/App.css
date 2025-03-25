@@ -1,0 +1,14 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+body {
+  cursor: url("/penguin.svg"), auto;
+}
+
+.cursor-penguin {
+  cursor: url("/penguin.svg"), auto;
+}
+
+.custom-cursor {
+  cursor: url("/penguin.svg") 16 16, auto;
+}

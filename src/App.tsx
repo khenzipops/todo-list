@@ -36,48 +36,38 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-[40%_60%] grid-rows-2 h-screen">
-      {/* Form Section */}
-      <div className="col-span-1 row-span-2 bg-white  justify-center p-4">
-        <h1 className="text-center font-Poppins text-xl font-medium">
-          Todo List
-        </h1>
-        <TodoForms onAddTodo={addTodo} />{" "}
-        <div className="">
-          <TodoList
-            todos={todos}
-            onToggleTodo={toggleTodo}
-            onEditTodo={editTodo}
-            onDeleteTodo={deleteTodo}
-          />
-          {/* <TodoList
-            todos={todos}
-            onToggleTodo={function (id: string): void {
-              throw new Error("Function not implemented.");
-            }}
-            onEditTodo={function (id: string, newText: string): void {
-              throw new Error("Function not implemented.");
-            }}
-            onDeleteTodo={function (id: string): void {
-              throw new Error("Function not implemented.");
-            }}
-          /> */}
+    <div className="w-full h-screen custom-cursor">
+      <div className=" grid grid-cols-[40%_60%] grid-rows-2 h-screen">
+        {/* Form Section */}
+        <div className="col-span-1 row-span-2 bg-white  justify-center p-4">
+          <h1 className="text-center font-Poppins text-xl font-medium">
+            Todo List
+          </h1>
+          <TodoForms onAddTodo={addTodo} />{" "}
+          <div className="">
+            <TodoList
+              todos={todos}
+              onToggleTodo={toggleTodo}
+              onEditTodo={editTodo}
+              onDeleteTodo={deleteTodo}
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Todo List Section */}
-      <div className="col-span-1 bg-green-500 p-4">
-        {" "}
-        <h1 className="text-center font-Poppins text-xl font-medium">
-          Working Tasks
-        </h1>
-      </div>
+        {/* Todo List Section */}
+        <div className="col-span-1 bg-white p-4">
+          {" "}
+          <h1 className="text-center font-Poppins text-xl font-medium">
+            Working Tasks
+          </h1>
+        </div>
 
-      {/* Completed Tasks Section (optional for future) */}
-      <div className="col-span-1 bg-orange-600 p-4">
-        <h1 className="text-center font-Poppins text-xl font-medium">
-          Completed Tasks
-        </h1>
+        {/* Completed Tasks Section (optional for future) */}
+        <div className="col-span-1 bg-white p-4">
+          <h1 className="text-center font-Poppins text-xl font-medium">
+            Completed Tasks
+          </h1>
+        </div>
       </div>
     </div>
   );
