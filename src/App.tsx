@@ -8,14 +8,15 @@ const App: React.FC = () => {
 
   const addTodo = (text: string) => {
     const newTodo: Todo = {
-      id: crypto.randomUUID(),
+      id: Date.now(),
       text,
       completed: false,
+      length: 0,
     };
 
     setTodos((prev) => [...prev, newTodo]);
   };
-  const toggleTodo = (id: string) => {
+  const toggleTodo = (id: number) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -23,7 +24,7 @@ const App: React.FC = () => {
     );
   };
 
-  const editTodo = (id: string, newText: string) => {
+  const editTodo = (id: number, newText: string) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, text: newText } : todo
@@ -31,7 +32,7 @@ const App: React.FC = () => {
     );
   };
 
-  const deleteTodo = (id: string) => {
+  const deleteTodo = (id: number) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
