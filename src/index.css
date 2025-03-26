@@ -3,6 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --font-Roboto: "Roboto", sans-serif;
+  --font-Poppins: "Poppins", sans-serif;
+  --font-Iansui: "Iansui", sans-serif;
+  --font-Outfit: "Outfit", sans-serif;
+  --primary: #f3f5f5;
+  --secondary: #69a6e0;
+  --accent: #f59e0b;
+  --background: #f3f4f6;
+}
+
 /* :root {
   --font-Roboto: "Roboto", sans-serif;
   --font-Poppins: "Poppins", sans-serif;
@@ -13,16 +24,3 @@
   --accent: #f59e0b;
   --background: #f3f4f6;
 } */
-
-@theme {
-  --font-Roboto: "Roboto", sans-serif;
-  --font-Poppins: "Poppins", sans-serif;
-  --font-Iansui: "Iansui", sans-serif;`
-  --font-Outfit: "Outfit", sans-serif;
-  --primary: #f3f5f5;
-  --secondary: #69a6e0;
-  --accent: #f59e0b;
-  --background: #f3f4f6;
-}
-
-
