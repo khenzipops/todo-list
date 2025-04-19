@@ -50,7 +50,7 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-3 justify-center gap-8 ">
+        <div className="w-full grid grid-cols-1 justify-center gap-8">
           {/* Todo List Section */}
           <div className="col-span-1 bg-white p-4 ">
             <h1 className="text-center font-poppins text-xl font-medium ">
@@ -65,17 +65,17 @@ const App: React.FC = () => {
               />
             </div>
           </div>
-          <div className="col-span-1 bg-white p-4">
+          {/* <div className="col-span-1 bg-white p-4">
             <h1 className="text-center font-poppins text-xl font-medium">
               In Progress
             </h1>
           </div>
-          {/* Completed Tasks Section (optional for future) */}
+
           <div className="col-span-1 bg-white p-4">
             <h1 className="text-center font-poppins text-xl font-medium">
               Completed
             </h1>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
